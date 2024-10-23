@@ -1,0 +1,62 @@
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+    .marquee__area{
+        display: flex;
+        align-items: center;
+        padding: 10px 0px;
+    }
+    .marquee__area marquee span{
+        margin-left: 50px;
+    }
+</style>
+
+{% style %}
+    .marquee__area{
+        background-color: {{ section.settings.marquee_bg }};
+        color: {{ section.settings.marquee_text }};
+    }
+{% endstyle %}
+
+<section>
+  <div class="marquee__area">
+    <marquee>
+        <span>This text will scroll from right to left</span>
+        <span>This text will scroll from right to left</span>
+        <span>This text will scroll from right to left</span>
+        <span>This text will scroll from right to left</span>
+    </marquee>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "marquee",
+    "settings": [
+      {
+        "type": "text",
+        "id": "marquee",
+        "label": "Marquee",
+        "default": "Marquee"
+      }, {
+        "type": "color",
+        "id": "marquee_bg",
+        "label": "Marquee Background",
+        "default": "#F0C400"
+      }, {
+        "type": "color",
+        "id": "marquee_text",
+        "label": "Marquee Text",
+        "default": "#020408"
+      }
+    ],
+    "presets": [
+      {
+        "name": "marquee"
+      }
+    ]
+  }
+{% endschema %}

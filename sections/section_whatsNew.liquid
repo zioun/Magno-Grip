@@ -1,0 +1,235 @@
+<!-- Swiper Slider Code -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .swiper_area{
+    background-color: #f6f6f6;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0px;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  .whats-card-text-area{
+    padding: 15px;
+  }
+  .whats-seller-title h1{
+    padding: 50px 0px 0px 0px;
+    text-align: center;
+    font-weight: bolder;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .swiper-slide h1{
+    font-size: 18px;
+    text-align: start;
+    font-weight: bold;
+    color: #221F22;
+  }
+  .swiper-slide p{
+    text-align: start;
+  }
+  .swiper-slide a{
+    background-color: #FDCB2C;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 7px 0px;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: #221F22;
+    font-weight: bold;
+  }
+
+  .swiper_area .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+  .swiper_area {
+    position: relative;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 55%;
+    left: calc(50% + 630px);
+    transform: translateX(-50%);
+  }
+  .swiper-button-prev {
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 630px);
+    transform: translateX(-50%);
+  }
+
+</style>
+
+<section class="swiper_area">
+  <div class="container">
+    <div class="whats-seller-title">
+      <h1>Whats New</h1>
+    </div>
+    <div class="swiper whats_seller_Swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            <div class="whats-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Price : $100</p>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            <div class="whats-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Price : $100</p>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            <div class="whats-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Price : $100</p>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            <div class="whats-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Price : $100</p>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            <div class="whats-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Price : $100</p>
+              <a href="#">Buy Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% comment %} <div>
+    <div class="swiper-button-next">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+      </svg>
+    </div>
+    <div class="swiper-button-prev">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        class="size-6">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M15.75 19.5 8.25 12l7.5-7.5" />
+      </svg>
+    </div>
+  </div> {% endcomment %}
+</section>
+
+{% schema %}
+  {
+    "name": "Whats Product Slider",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "whats_product",
+        "name": "Whats Product",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "whats_product_logo",
+            "label": "Whats Product Logo"
+          }, {
+            "type": "text",
+            "id": "whats_product_title",
+            "label": "Whats Product Title",
+            "default": "This is title"
+          }, {
+            "type": "text",
+            "id": "whats_product_paragraph",
+            "label": "Whats Product Paragraph",
+            "default": "This is paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Whats Product Slider",
+        "category": "Custom",
+        "blocks": [
+          {
+            "type": "whats_product"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".whats_seller_Swiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+  });
+</script>

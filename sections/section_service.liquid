@@ -1,0 +1,113 @@
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .service_area{
+    background-color: #FDCB2C;
+    padding: 50px 0px;
+  }
+  .services_sections {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .service_item {
+    display: flex;
+    justify-self: start;
+    align-items: center;
+    gap: 20px;
+  }
+  .service_item img {
+    width: 50px;
+  }
+  .service_item h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+</style>
+
+{% style %}
+{% endstyle %}
+
+<section class="service_area">
+  <div class="container">
+    <div class="services_sections">
+      <div class="service_item">
+        <div>
+          <img src="https://cdn-icons-png.freepik.com/512/16696/16696710.png?uid=R50488006&ga=GA1.1.123714141.1728247324" alt="">
+        </div>
+        <div>
+          <h1>Free Shipping</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+      <div class="service_item">
+        <div>
+          <img src="https://cdn-icons-png.freepik.com/512/16696/16696710.png?uid=R50488006&ga=GA1.1.123714141.1728247324" alt="">
+        </div>
+        <div>
+          <h1>Free Shipping</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+      <div class="service_item">
+        <div>
+          <img src="https://cdn-icons-png.freepik.com/512/16696/16696710.png?uid=R50488006&ga=GA1.1.123714141.1728247324" alt="">
+        </div>
+        <div>
+          <h1>Free Shipping</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+      <div class="service_item">
+        <div>
+          <img src="https://cdn-icons-png.freepik.com/512/16696/16696710.png?uid=R50488006&ga=GA1.1.123714141.1728247324" alt="">
+        </div>
+        <div>
+          <h1>Free Shipping</h1>
+          <p>Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "services",
+    "blocks": [
+      {
+        "name": "services",
+        "type": "services",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "service_logo",
+            "label": "Service Logo"
+          }, {
+            "type": "text",
+            "id": "service_title",
+            "label": "Service Title",
+            "default": "This is title"
+          }, {
+            "type": "text",
+            "id": "service_paragraph",
+            "label": "Service Paragraph",
+            "default": "This is paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "services",
+        "blocks": [
+          {
+            "type": "services"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

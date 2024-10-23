@@ -1,0 +1,240 @@
+<!-- Swiper Slider Code -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .review__area {
+    background-color: #ffffff !important;
+  }
+  .swiper {
+    width: 100%;
+    height: 100%;
+    padding: 50px 0;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 5px;
+  }
+  .review-section-card-text-area {
+    padding: 15px;
+    text-align: center;
+  }
+  .review_section_Swiper{
+    margin-top: -20px;
+  }
+  .review-section-card-text-area h1{
+    text-align: center !important;
+    font-size: 18px;
+  }
+  .review-section-card-text-area p{
+    text-align: center !important;
+    font-size: 16px;
+    line-height: 20px;
+    margin-top: 20px;
+  }
+  .review-section-title h1 {
+    padding: 50px 0px 0px 0px;
+    text-align: start;
+    font-weight: 600;
+    font-size: 30px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  .swiper-slide h1 {
+    font-size: 18px;
+    text-align: start;
+    font-weight: bold;
+    color: #221F22;
+  }
+  .swiper-slide p {
+    text-align: start;
+  }
+  .swiper-slide a {
+    background-color: #FDCB2C;
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    padding: 7px 0;
+    margin-top: 15px;
+    border-radius: 10px;
+    color: #221F22;
+    font-weight: bold;
+  }
+
+  .swiper_area .swiper-button-next::after,
+  .swiper-button-prev::after {
+    display: none;
+  }
+  .swiper_area {
+    position: relative;
+  }
+  .swiper-button-next {
+    position: absolute;
+    top: 55%;
+    left: calc(50% + 630px);
+    transform: translateX(-50%);
+  }
+  .swiper-button-prev {
+    position: absolute;
+    top: 55%;
+    left: calc(50% - 630px);
+    transform: translateX(-50%);
+  }
+
+</style>
+
+<section class="swiper_area review__area">
+  <div class="container">
+    <div class="review-section-title">
+      <h1>CUSTOMER REVIEW</h1>
+    </div>
+    <div class="swiper review_section_Swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div>
+            <div class="review-section-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Dynamically synthesize viral e-business without superior e-commerce. Progressively generate plug-and-play.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <div class="review-section-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Dynamically synthesize viral e-business without superior e-commerce. Progressively generate plug-and-play.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <div class="review-section-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Dynamically synthesize viral e-business without superior e-commerce. Progressively generate plug-and-play.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <div class="review-section-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Dynamically synthesize viral e-business without superior e-commerce. Progressively generate plug-and-play.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div>
+            <div class="review-section-card-text-area">
+              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+              <p>Dynamically synthesize viral e-business without superior e-commerce. Progressively generate plug-and-play.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% comment %} <div>
+      <div class="swiper-button-next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </div>
+  </div> {% endcomment %}
+</section>
+
+{% schema %}
+  {
+    "name": "Review Section Slider",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "review_section",
+        "name": "Review Section",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "review_section_logo",
+            "label": "Review Section Logo"
+          }, {
+            "type": "text",
+            "id": "review_section_title",
+            "label": "Review Section Title",
+            "default": "This is title"
+          }, {
+            "type": "text",
+            "id": "review_section_paragraph",
+            "label": "Review Section Paragraph",
+            "default": "This is paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Review Section Slider",
+        "category": "Custom",
+        "blocks": [
+          {
+            "type": "review_section"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".review_section_Swiper", {
+    slidesPerView: 4,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+  });
+</script>

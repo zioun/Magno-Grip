@@ -1,0 +1,41 @@
+<style>
+  .container{
+    max-width: 1200px;
+    margin: auto;
+  }
+  .banner__area img{
+    width: 100%;
+    height: auto;
+    padding: 50px 0px;
+  }
+</style>
+
+
+{% style %}
+{% endstyle %}
+
+<section class="container">
+  <div class="banner__area">
+    {% if section.settings.banner != blank %}
+      {{ section.settings.banner | image_url: width: 800 | image_tag }}
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "banner",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "banner",
+        "label": "Banner Image"
+      }
+    ],
+    "presets": [
+      {
+        "name": "banner"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,112 @@
+<style>
+  .container {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .newsletter_area {
+    background-color: #FDCB2C;
+    padding: 50px 0;
+  }
+  .newsletter_sections {
+    text-align: center;
+  }
+  .newsletter_sections h1 {
+    font-weight: bold;
+  }
+  .newsletter_sections p {
+    margin-top: 5px;
+  }
+  .news_input_area {
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .news_input_area input {
+    width: 100%;
+    padding: 15px 10px;
+    background-color: transparent;
+    border-radius: 3px;
+    font-weight: bold;
+    border: 1px solid black;
+    margin-top: 30px;
+    color: black;
+    outline: none;
+  }
+  .news_input_area svg{
+    width: 25px;
+    margin-top: 30px;
+    margin-left: -40px;
+  }
+
+</style>
+
+{% style %}
+{% endstyle %}
+
+<section class="newsletter_area">
+  <div class="container">
+    <div class="newsletter_sections">
+      <div>
+        <h1>Subscribe to our newsletter</h1>
+        <p>Compellingly conceptualize distributed architectures after exceptional experiences.</p>
+      </div>
+      <div class="news_input_area">
+        <input type="email" placeholder="Inter your email">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+        </svg>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "newsletter",
+    "blocks": [
+      {
+        "name": "newsletter",
+        "type": "newsletter",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "service_logo",
+            "label": "News Letter Logo"
+          }, {
+            "type": "text",
+            "id": "newsletter_title",
+            "label": "News Letter Title",
+            "default": "This is title"
+          }, {
+            "type": "text",
+            "id": "newsletter_paragraph",
+            "label": "News Letter Paragraph",
+            "default": "This is paragraph"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "newsletter",
+        "blocks": [
+          {
+            "type": "newsletter"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
