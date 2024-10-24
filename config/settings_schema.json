@@ -1,4 +1,18 @@
+
+
+
 [
+  {
+    "name": "custom_btn_color",
+    "settings": [
+        {
+            "type": "color",
+            "id": "custom_btn_color",
+            "label": "Color",
+            "default": "#FDCB2C"
+        }
+    ],
+},
   {
     "name": "theme_info",
     "theme_name": "Dawn",

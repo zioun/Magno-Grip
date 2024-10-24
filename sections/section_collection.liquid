@@ -61,19 +61,7 @@
   .collection-card-item-area{
     position: relative;
   }
-  .collection-card-text-area a{
-    background-color: #FDCB2C;
-    width: 100%;
-    text-decoration: none;
-    color: #221F22;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: start;
-    padding-left: 15px !important;
-    border-radius: 0px !important;
-  }
+  
 
   .swiper_area .swiper-button-next::after,
   .swiper-button-prev::after {
@@ -100,6 +88,25 @@
   .swiper-pagination-bullet-active{
     background-color: #FDCB2C !important;
   }
+  .showall_area{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .showall{
+    background-color: #FDCB2C;
+    padding: 10px 30px;
+    color: #221F22;
+    border-radius: 5px;
+  }
+  .collection_title{
+    background-color: #FDCB2C;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding: 20px 20px;
+  }
   
 
 </style>
@@ -107,44 +114,26 @@
 <section class="swiper_area collection_swiper_area">
   <div class="container">
     <div class="collection-seller-title">
-      <h1>Collection Sellers</h1>
+      <h1>Our Collection</h1>
     </div>
     <div class="swiper collectionProduct">
       <div class="swiper-wrapper">
+      {% assign collection = section.settings.collection_list %}
+      {% for product in collection %}
         <div class="swiper-slide collection-card-item-area">
           <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
+            {{ product.featured_image |  image_url: width: 800 |  image_tag  }}
             <div class="collection-card-text-area">
-              <a href="#">Monotonectally leverage other's.</a>
+              <a class="collection_title" href="{{ product.url }}"><h1>{{ product.title }}</h1></a>
             </div>
           </div>
         </div>
-        <div class="swiper-slide collection-card-item-area">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="collection-card-text-area">
-              <a href="#">Monotonectally leverage other's.</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide collection-card-item-area">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="collection-card-text-area">
-              <a href="#">Monotonectally leverage other's.</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide collection-card-item-area">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="collection-card-text-area">
-              <a href="#">Monotonectally leverage other's.</a>
-            </div>
-          </div>
-        </div>
+      {% endfor %}
       </div>
       <div class="swiper-pagination"></div>
+    </div>
+    <div class="showall_area">
+      <a class="showall" href="/collections/all">Show All Product</a>
     </div>
   </div>
   <div>
@@ -181,40 +170,12 @@
 
 {% schema %}
   {
-    "name": "Collection Product Slider",
-    "settings": [],
-    "blocks": [
+    "name": "Collection List",
+    "settings": [
       {
-        "type": "collection_product",
-        "name": "Collection Product",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "collection_product_logo",
-            "label": "Collection Product Logo"
-          }, {
-            "type": "text",
-            "id": "collection_product_title",
-            "label": "Collection Product Title",
-            "default": "This is title"
-          }, {
-            "type": "text",
-            "id": "collection_product_paragraph",
-            "label": "Collection Product Paragraph",
-            "default": "This is paragraph"
-          }
-        ]
-      }
-    ],
-    "presets": [
-      {
-        "name": "Collection Product Slider",
-        "category": "Custom",
-        "blocks": [
-          {
-            "type": "collection_product"
-          }
-        ]
+        "type": "collection_list",
+        "id": "collection_list",
+        "label": "Collection List"
       }
     ]
   }
@@ -233,6 +194,9 @@
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
-    }
+    },autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
   });
 </script>

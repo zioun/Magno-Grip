@@ -11,14 +11,14 @@
     max-width: 1200px;
     margin: auto;
   }
-  .swiper_area{
+  .swiper_area {
     background-color: #f6f6f6;
   }
-  
+
   .swiper {
     width: 100%;
     height: 100%;
-    padding: 50px 0px;
+    padding: 50px 0;
   }
 
   .swiper-slide {
@@ -30,11 +30,18 @@
     background-color: #ffffff;
     border-radius: 5px;
   }
-  .best-card-text-area{
+  .best-card-text-area {
     padding: 15px;
   }
-  .best-seller-title h1{
-    padding: 50px 0px 0px 0px;
+  .best-card-text-area p{
+    padding-bottom: 5px;
+    color: rgb(46, 46, 46);
+  }
+  a{
+    text-decoration: none;
+  }
+  .best-seller-title h1 {
+    padding: 50px 0 0;
     text-align: center;
     font-weight: bolder;
   }
@@ -46,25 +53,14 @@
     object-fit: cover;
     border-radius: 5px;
   }
-  .swiper-slide h1{
+  .swiper-slide h1 {
     font-size: 18px;
     text-align: start;
     font-weight: bold;
     color: #221F22;
   }
-  .swiper-slide p{
+  .swiper-slide p {
     text-align: start;
-  }
-  .swiper-slide a{
-    background-color: #FDCB2C;
-    display: block;
-    width: 100%;
-    text-decoration: none;
-    padding: 7px 0px;
-    margin-top: 15px;
-    border-radius: 10px;
-    color: #221F22;
-    font-weight: bold;
   }
 
   .swiper_area .swiper-button-next::after,
@@ -96,127 +92,70 @@
     </div>
     <div class="swiper best_seller_Swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="best-card-text-area">
-              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-              <p>Price : $100</p>
-              <a href="#">Buy Now</a>
+        {% assign products = section.settings.best_products_collection %}
+        {% for product in products.products %}
+          <a href="{{ product.url }}">
+          <div class="swiper-slide">
+            <div>
+              {{ product.featured_image |  image_url: width: 800 |  image_tag  }}
+              <div class="best-card-text-area">
+                <h1>{{ product.title }}</h1>
+                <p>Price : {{ product.price | money }}</p>
+                <a>{% render 'buy-buttons', product:product %}</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="swiper-slide">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="best-card-text-area">
-              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-              <p>Price : $100</p>
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="best-card-text-area">
-              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-              <p>Price : $100</p>
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="best-card-text-area">
-              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-              <p>Price : $100</p>
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div>
-            <img src="https://constructionproducts.co.nz/cdn/shop/files/Edited-Mix-2_e7f631ba-68cb-4262-8b76-8385830921ef_550x.jpg?v=1614302223" alt="">
-            <div class="best-card-text-area">
-              <h1>Lorem ipsum dolor sit amet consectetur.</h1>
-              <p>Price : $100</p>
-              <a href="#">Buy Now</a>
-            </div>
-          </div>
-        </div>
+          </a>
+        {% endfor %}
       </div>
     </div>
+
   </div>
-  {% comment %} <div>
-    <div class="swiper-button-next">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-      </svg>
-    </div>
-    <div class="swiper-button-prev">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="size-6">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M15.75 19.5 8.25 12l7.5-7.5" />
-      </svg>
-    </div>
+{% comment %} <div>
+      <div class="swiper-button-next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+        </svg>
+      </div>
+      <div class="swiper-button-prev">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5 8.25 12l7.5-7.5" />
+        </svg>
+      </div>
   </div> {% endcomment %}
 </section>
 
 {% schema %}
   {
     "name": "Best Product Slider",
-    "settings": [],
-    "blocks": [
+    "settings": [
       {
-        "type": "best_product",
-        "name": "Best Product",
-        "settings": [
-          {
-            "type": "image_picker",
-            "id": "best_product_logo",
-            "label": "Best Product Logo"
-          }, {
-            "type": "text",
-            "id": "best_product_title",
-            "label": "Best Product Title",
-            "default": "This is title"
-          }, {
-            "type": "text",
-            "id": "best_product_paragraph",
-            "label": "Best Product Paragraph",
-            "default": "This is paragraph"
-          }
-        ]
+        "type": "collection",
+        "id": "best_products_collection",
+        "label": "Best Products Collection"
       }
     ],
     "presets": [
       {
-        "name": "Best Product Slider",
-        "category": "Custom",
-        "blocks": [
-          {
-            "type": "best_product"
-          }
-        ]
+        "name": "Best Product Slider"
       }
     ]
   }
@@ -227,10 +166,6 @@
 <script>
   var swiper = new Swiper(".best_seller_Swiper", {
     slidesPerView: 4,
-    spaceBetween: 30,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-      },
+    spaceBetween: 30
   });
 </script>
